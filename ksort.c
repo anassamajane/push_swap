@@ -6,7 +6,7 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:43:23 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/03 17:43:24 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/06 22:24:21 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ int	index_of_largest_value(t_stack *stack_a)
 	return (max_index);
 }
 
-
-void	print_stack(t_stack *stack)
+/*void	print_stack(t_stack *stack)
 {
 	while(stack)
 	{
@@ -61,4 +60,4 @@ int	main(int ac, char **av)
 	}
 	print_stack(stack);
 	clear_list(&stack);
-}
+}*/

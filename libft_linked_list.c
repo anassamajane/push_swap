@@ -6,21 +6,25 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:33:04 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/03 14:52:45 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/06 10:33:38 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ft_strlen(const char *str)
+int	stack_size(t_stack *stack)
 {
-	size_t	i;
+	int	size;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
 }
+
 t_stack	*create_node(int value)
 {
 	t_stack	*new_node;

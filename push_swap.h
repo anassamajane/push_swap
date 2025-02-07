@@ -6,16 +6,17 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 12:10:22 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/03 14:36:43 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/07 16:20:02 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include <limits.h>
+# include <unistd.h>
 
 typedef struct s_stack
 {
@@ -51,11 +52,22 @@ long	my_atol(const char *str);
 int	is_valid(char *str);
 void	free_arr(char **arr);
 
+//
+int	index_of_largest_value(t_stack *stack_a);
+int	*stack_to_arr(t_stack *stack);
+void	push_into_b(t_stack **stack_a, t_stack **stack_b, int min, int max);
+int	calcul_ops(t_stack *stack_b, int big_index);
+void	operations_needed_to_back_to_a(t_stack **stack_a, t_stack **stack_b, int big_index);
+void	back_to_a(t_stack **stack_a, t_stack **stack_b);
+void	sorting_algo(t_stack **stack_a, t_stack **stack_b, int *arr);
+void	print_stack(t_stack *stack);//////
+void	small_sort(t_stack **stack_a, t_stack **stack_b);
 
 //libft helpers
 t_stack	*create_node(int value);
 void	add_back(t_stack **stack, t_stack *new);
 void	clear_list(t_stack **stack);
+int	stack_size(t_stack *stack);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *str);
 

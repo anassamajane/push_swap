@@ -6,20 +6,20 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:44:11 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/03 16:19:37 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/06 09:59:26 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_isdigit(int c)
+/*static int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
-}
+}*/
 
-static int	ft_isspace(char c)
+/*static int	ft_isspace(char c)
 {
 	const char	*spaces;
 	int	i;
@@ -33,6 +33,16 @@ static int	ft_isspace(char c)
 		i++;;
 	}
 	return (0);
+}*/
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
 long	my_atol(const char *str)
@@ -44,7 +54,7 @@ long	my_atol(const char *str)
 	result = 0;
 	i = 0;
 	sign = 1;
-	while (ft_isspace(str[i]))
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -52,7 +62,7 @@ long	my_atol(const char *str)
 			sign *= -1;
 		i++;
 	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
 		result = result * 10 + (str[i] - '0');
 		i++;
@@ -73,7 +83,7 @@ int	is_valid(char *str)
 		return (0);
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]))
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
 		i++;
 	}
