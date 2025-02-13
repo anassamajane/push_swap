@@ -6,7 +6,7 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 10:01:18 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/07 20:03:13 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/13 09:44:07 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,6 @@ void	sorting_algo(t_stack **stack_a, t_stack **stack_b, int *arr)
 		temp--;
 	}
 	back_to_a(stack_a, stack_b);
-	free(arr);
 }
 
 void	print_stack(t_stack *stack)
@@ -169,8 +168,10 @@ int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int	size_a;
+	//int	size_a;
 
+	if (ac < 2)
+		return (0);
 	stack_b = NULL;
 	stack_a = parse_args(&av[1], ac - 1);
 	if (!stack_a)
@@ -178,14 +179,8 @@ int	main(int ac, char **av)
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	size_a = stack_size(stack_a);
-
-//	print_stack(stack_a);
-
-	if (size_a > 10)
-		sorting_algo(&stack_a, &stack_b, stack_to_arr(stack_a));
-	else
-		small_sort(&stack_a, &stack_b);
-
-//	print_stack(stack_a);
+	//size_a = stack_size(stack_a);
+	//print_stack(stack_a);
+	final_check(&stack_a, &stack_b);
+	//print_stack(stack_a);
 }

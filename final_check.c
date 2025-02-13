@@ -6,17 +6,17 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 17:36:19 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/07 18:19:06 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/13 19:34:54 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "push_swap.h"
+#include "push_swap.h"
 
 int	already_sorted(t_stack *stack_a)
 {
 	t_stack	*current;
 
-	current = *stack_a;
+	current = stack_a;
 	if (!current)
 		return (1);
 	while (current->next)
@@ -39,7 +39,7 @@ int	check_duplicate(int *sorted_arr, int size)
 			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	final_check(t_stack **stack_a, t_stack **stack_b)
@@ -49,4 +49,25 @@ int	final_check(t_stack **stack_a, t_stack **stack_b)
 
 	sorted = stack_to_arr(*stack_a);
 	size = stack_size(*stack_a);
-}*/
+	if (check_duplicate(sorted, size))
+	{
+		clear_list(stack_a);
+		free(sorted);
+		write(2, "Error\n", 6);
+		return (255);
+	}
+	if (already_sorted(*stack_a))
+	{
+		clear_list(stack_a);
+		free(sorted);
+		return (0);
+	}
+	if (size > 10)
+		sorting_algo(stack_a, stack_b, sorted);
+	else
+		small_sort(stack_a, stack_b);
+	//print_stack(*stack_a);
+	free(sorted);
+	clear_list(stack_a);
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 12:10:22 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/07 16:20:02 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/08 21:21:10 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	back_to_a(t_stack **stack_a, t_stack **stack_b);
 void	sorting_algo(t_stack **stack_a, t_stack **stack_b, int *arr);
 void	print_stack(t_stack *stack);//////
 void	small_sort(t_stack **stack_a, t_stack **stack_b);
-
+int	final_check(t_stack **stack_a, t_stack **stack_b);
 //libft helpers
 t_stack	*create_node(int value);
 void	add_back(t_stack **stack, t_stack *new);

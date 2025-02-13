@@ -17,11 +17,11 @@ void	_push(t_stack **stack_to, t_stack **stack_from)
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	_push(stack_a, stack_b);
-	printf("pa\n");
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	_push(stack_b, stack_a);
-	printf("pb\n");
+	write(1, "pb\n", 3);
 }
