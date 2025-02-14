@@ -1,44 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ksort.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 17:43:23 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/06 22:24:21 by anaamaja         ###   ########.fr       */
+/*   Created: 2025/02/14 16:26:40 by anaamaja          #+#    #+#             */
+/*   Updated: 2025/02/14 17:02:36 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	index_of_largest_value(t_stack *stack_a)
+void	print_stack(t_stack *stack)
 {
-	t_stack	*current;
-	int	max;
-	int	max_index;
-	int	i;
-	
-	current = stack_a;
-	max = current->value;
-	i = 0;
-	max_index = 0;
-	while (current)
-	{
-		if (current->value > max)
-		{
-			max = current->value;
-			max_index = i;
-		}
-		i++;
-		current = current->next;
-	}
-	return (max_index);
-}
-
-/*void	print_stack(t_stack *stack)
-{
-	while(stack)
+	while (stack)
 	{
 		printf("%d -> ", stack->value);
 		stack = stack->next;
@@ -48,16 +24,17 @@ int	index_of_largest_value(t_stack *stack_a)
 
 int	main(int ac, char **av)
 {
-	t_stack	*stack;
-	int	size;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
-	size = ac - 1;
-	stack = parse_args(&av[1], size);
-	if (!stack)
+	if (ac < 2)
+		return (0);
+	stack_b = NULL;
+	stack_a = parse_args(&av[1], ac - 1);
+	if (!stack_a)
 	{
-		printf("Error\n");
+		write(2, "Error\n", 6);
 		return (0);
 	}
-	print_stack(stack);
-	clear_list(&stack);
-}*/
+	final_check(&stack_a, &stack_b);
+}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/14 17:00:30 by anaamaja          #+#    #+#             */
+/*   Updated: 2025/02/14 17:00:31 by anaamaja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	_push(t_stack **stack_to, t_stack **stack_from)
@@ -6,10 +18,8 @@ void	_push(t_stack **stack_to, t_stack **stack_from)
 
 	if (!*stack_from)
 		return ;
-
 	top_from = *stack_from;
 	*stack_from = top_from->next;
-
 	top_from->next = *stack_to;
 	*stack_to = top_from;
 }

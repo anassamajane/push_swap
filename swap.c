@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/14 17:00:05 by anaamaja          #+#    #+#             */
+/*   Updated: 2025/02/14 17:06:13 by anaamaja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	_swap(t_stack **stack)
@@ -9,10 +21,8 @@ void	_swap(t_stack **stack)
 		return ;
 	first = *stack;
 	second = (*stack)->next;
-
 	first->next = second->next;
 	second->next = first;
-
 	*stack = second;
 }
 

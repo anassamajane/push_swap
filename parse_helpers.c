@@ -6,34 +6,11 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 17:44:11 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/06 09:59:26 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/14 18:49:05 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*static int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}*/
-
-/*static int	ft_isspace(char c)
-{
-	const char	*spaces;
-	int	i;
-
-	i = 0;
-	spaces = " \f\n\r\t\v";
-	while (spaces[i])
-	{
-		if (spaces[i] == c)
-			return (1);
-		i++;;
-	}
-	return (0);
-}*/
 
 size_t	ft_strlen(const char *str)
 {
@@ -48,8 +25,8 @@ size_t	ft_strlen(const char *str)
 long	my_atol(const char *str)
 {
 	long	result;
-	int	sign;
-	int	i;
+	int		sign;
+	int		i;
 
 	result = 0;
 	i = 0;
@@ -80,7 +57,9 @@ int	is_valid(char *str)
 	if (str[0] == '-' || str[0] == '+')
 		i++;
 	if (!str[i])
+	{
 		return (0);
+	}
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))

@@ -6,7 +6,7 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 17:36:19 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/13 19:34:54 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:01:28 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int	final_check(t_stack **stack_a, t_stack **stack_b)
 		sorting_algo(stack_a, stack_b, sorted);
 	else
 		small_sort(stack_a, stack_b);
-	//print_stack(*stack_a);
 	free(sorted);
 	clear_list(stack_a);
 	return (0);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/14 16:59:57 by anaamaja          #+#    #+#             */
+/*   Updated: 2025/02/14 17:06:24 by anaamaja         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	_rotate(t_stack **stack)
@@ -7,7 +19,6 @@ void	_rotate(t_stack **stack)
 
 	if (!*stack || (*stack)->next == NULL)
 		return ;
-
 	top = *stack;
 	bottom = *stack;
 	*stack = top->next;

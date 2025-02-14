@@ -6,7 +6,7 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 15:59:49 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/13 10:33:51 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:29:43 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,14 @@ void	sort_3(t_stack **stack_a)
 		rra(stack_a);
 	if ((*stack_a)->value > (*stack_a)->next->value)
 		sa(stack_a);
-
 }
 
 int	min_pos(t_stack *stack_a)
 {
 	t_stack	*current;
-	int	min;
-	int	min_pos;
-	int	i;
+	int		min;
+	int		min_pos;
+	int		i;
 
 	current = stack_a;
 	min = current->value;
@@ -60,16 +59,11 @@ int	min_pos(t_stack *stack_a)
 
 void	small_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	int	pos;
-	int	size_a;
-	int	size_b;
-
+	int (pos), (size_a), (size_b);
 	size_a = stack_size(*stack_a);
 	if (size_a == 2)
-	{
 		if ((*stack_a)->value > (*stack_a)->next->value)
 			sa(stack_a);
-	}
 	while (size_a > 3)
 	{
 		pos = min_pos(*stack_a);

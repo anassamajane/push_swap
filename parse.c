@@ -6,7 +6,7 @@
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 11:17:29 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/06 09:50:50 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/02/14 18:49:20 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	parse_array(char **arr, t_stack **stack)
 {
-	int	i;
+	int		i;
 	long	num;
 	t_stack	*new_node;
 
@@ -57,7 +57,7 @@ int	parse_string(char *input, t_stack **stack)
 t_stack	*parse_args(char **inputs, int size)
 {
 	t_stack	*stack;
-	int	i;
+	int		i;
 
 	stack = NULL;
 	i = 0;
