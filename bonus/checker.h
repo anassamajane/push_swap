@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 12:10:22 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/02/14 17:26:52 by anaamaja         ###   ########.fr       */
+/*   Created: 2025/03/15 03:08:38 by anaamaja          #+#    #+#             */
+/*   Updated: 2025/03/15 03:08:42 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
 
+#ifndef CHECKER_H
+# define CHECKER_H
+
+# include "../gnl/get_next_line.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -52,19 +54,6 @@ long				my_atol(const char *str);
 int					is_valid(char *str);
 void				free_arr(char **arr);
 
-/* sorting */
-int					index_of_largest_value(t_stack *stack_a);
-int					*stack_to_arr(t_stack *stack);
-void				push_into_b(t_stack **stack_a, t_stack **stack_b, int min,
-						int max);
-int					calcul_ops(t_stack *stack_b, int big_index);
-void				ops_to_back_to_a(t_stack **stack_a, t_stack **stack_b,
-						int big_index);
-void				back_to_a(t_stack **stack_a, t_stack **stack_b);
-void				sorting_algo(t_stack **stack_a, t_stack **stack_b,
-						int *arr);
-void				small_sort(t_stack **stack_a, t_stack **stack_b);
-int					final_check(t_stack **stack_a, t_stack **stack_b);
 
 /* libft helpers */
 t_stack				*create_node(int value);
@@ -74,4 +63,11 @@ int					stack_size(t_stack *stack);
 char				**ft_split(char const *s, char c);
 size_t				ft_strlen(const char *str);
 int	ft_strcmp(char *s1, char *s2);
+
+/* checker */
+void    read_and_execute(t_stack **stack_a, t_stack **stack_b);
+void    final_check_bonus(t_stack *stack_a, t_stack *stack_b);
+int execute_instruction(char *cmd, t_stack **stack_a, t_stack **stack_b);
+int check_duplicate(t_stack *stack);
+int	already_sorted(t_stack *stack_a);
 #endif
