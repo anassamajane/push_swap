@@ -5,7 +5,7 @@ SRCS = final_check.c ft_split.c libft_linked_list.c main.c \
 SRCSB = bonus/checker_bonus.c bonus/libft_helpers_bonus.c bonus/main_bonus.c \
 		bonus/parse_bonus.c bonus/parse_helpers_bonus.c bonus/push_bonus.c \
 		bonus/reverse_rotate_bonus.c bonus/rotate_bonus.c bonus/swap_bonus.c \
-		gnl/get_next_line.c gnl/get_next_line_utils.c bonus/ft_split_bonus.c
+		bonus/gnl/get_next_line.c bonus/gnl/get_next_line_utils.c bonus/ft_split_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 OBJSB = $(SRCSB:.c=.o)

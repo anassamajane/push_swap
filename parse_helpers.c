@@ -42,6 +42,9 @@ long	my_atol(const char *str)
 	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
 		result = result * 10 + (str[i] - '0');
+		if ((result > INT_MAX && sign > 0) || ((result * -1) < INT_MIN
+				&& sign < 0))
+			return (result * sign);
 		i++;
 	}
 	return (result * sign);
@@ -57,9 +60,7 @@ int	is_valid(char *str)
 	if (str[0] == '-' || str[0] == '+')
 		i++;
 	if (!str[i])
-	{
 		return (0);
-	}
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))

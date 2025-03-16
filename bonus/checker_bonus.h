@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaamaja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 03:08:38 by anaamaja          #+#    #+#             */
-/*   Updated: 2025/03/15 03:08:42 by anaamaja         ###   ########.fr       */
+/*   Updated: 2025/03/15 22:47:27 by anaamaja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-#ifndef CHECKER_H
-# define CHECKER_H
-
-# include "../gnl/get_next_line.h"
+# include "gnl/get_next_line.h"
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -54,7 +53,6 @@ long				my_atol(const char *str);
 int					is_valid(char *str);
 void				free_arr(char **arr);
 
-
 /* libft helpers */
 t_stack				*create_node(int value);
 void				add_back(t_stack **stack, t_stack *new);
@@ -62,12 +60,13 @@ void				clear_list(t_stack **stack);
 int					stack_size(t_stack *stack);
 char				**ft_split(char const *s, char c);
 size_t				ft_strlen(const char *str);
-int	ft_strcmp(char *s1, char *s2);
+int					ft_strcmp(char *s1, char *s2);
 
 /* checker */
-void    read_and_execute(t_stack **stack_a, t_stack **stack_b);
-void    final_check_bonus(t_stack *stack_a, t_stack *stack_b);
-int execute_instruction(char *cmd, t_stack **stack_a, t_stack **stack_b);
-int check_duplicate(t_stack *stack);
-int	already_sorted(t_stack *stack_a);
+void				read_and_execute(t_stack **stack_a, t_stack **stack_b);
+void				final_check_bonus(t_stack *stack_a, t_stack *stack_b);
+int					execute_instruction(char *cmd, t_stack **stack_a,
+						t_stack **stack_b);
+int					check_duplicate(t_stack *stack);
+int					already_sorted(t_stack *stack_a);
 #endif

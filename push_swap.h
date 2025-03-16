@@ -73,5 +73,4 @@ void				clear_list(t_stack **stack);
 int					stack_size(t_stack *stack);
 char				**ft_split(char const *s, char c);
 size_t				ft_strlen(const char *str);
-int	ft_strcmp(char *s1, char *s2);
 #endif

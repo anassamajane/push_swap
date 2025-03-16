@@ -12,16 +12,6 @@
 
 #include "push_swap.h"
 
-void	print_stack(t_stack *stack)
-{
-	while (stack)
-	{
-		printf("%d -> ", stack->value);
-		stack = stack->next;
-	}
-	printf("\n");
-}
-
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
@@ -34,7 +24,7 @@ int	main(int ac, char **av)
 	if (!stack_a)
 	{
 		write(2, "Error\n", 6);
-		return (0);
+		return (1);
 	}
-	final_check(&stack_a, &stack_b);
+	return (final_check(&stack_a, &stack_b));
 }

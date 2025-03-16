@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 void	_rotate(t_stack **stack)
 {
@@ -31,18 +31,15 @@ void	_rotate(t_stack **stack)
 void	ra(t_stack **stack_a)
 {
 	_rotate(stack_a);
-	write(1, "ra\n", 3);
 }
 
 void	rb(t_stack **stack_b)
 {
 	_rotate(stack_b);
-	write(1, "rb\n", 3);
 }
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
 {
 	_rotate(stack_a);
 	_rotate(stack_b);
-	write(1, "rr\n", 3);
 }

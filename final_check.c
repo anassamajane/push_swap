@@ -54,13 +54,13 @@ int	final_check(t_stack **stack_a, t_stack **stack_b)
 		clear_list(stack_a);
 		free(sorted);
 		write(2, "Error\n", 6);
-		return (255);
+		return (1);
 	}
 	if (already_sorted(*stack_a))
 	{
 		clear_list(stack_a);
 		free(sorted);
-		return (0);
+		return (1);
 	}
 	if (size > 10)
 		sorting_algo(stack_a, stack_b, sorted);

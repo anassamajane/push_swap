@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 int	main(int ac, char **av)
 {
@@ -24,14 +24,13 @@ int	main(int ac, char **av)
 	if (!stack_a)
 	{
 		write(2, "Error\n", 6);
-		return (0);
+		return (1);
 	}
 	if (check_duplicate(stack_a))
 	{
-		write (2, "Error\n", 6);
+		write(2, "Error\n", 6);
 		clear_list(&stack_a);
-		clear_list(&stack_b);
-		return (0);
+		return (1);
 	}
 	read_and_execute(&stack_a, &stack_b);
 	final_check_bonus(stack_a, stack_b);

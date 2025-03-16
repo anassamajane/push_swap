@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 void	_reverse_rotate(t_stack **stack)
 {
@@ -33,18 +33,15 @@ void	_reverse_rotate(t_stack **stack)
 void	rra(t_stack **stack_a)
 {
 	_reverse_rotate(stack_a);
-	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **stack_b)
 {
 	_reverse_rotate(stack_b);
-	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	_reverse_rotate(stack_a);
 	_reverse_rotate(stack_b);
-	write(1, "rrr\n", 4);
 }

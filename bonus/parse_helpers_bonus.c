@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "checker_bonus.h"
 
 size_t	ft_strlen(const char *str)
 {
@@ -42,6 +42,9 @@ long	my_atol(const char *str)
 	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
 	{
 		result = result * 10 + (str[i] - '0');
+		if ((result > INT_MAX && sign > 0) || ((result * -1) < INT_MIN
+				&& sign < 0))
+			return (result * sign);
 		i++;
 	}
 	return (result * sign);
